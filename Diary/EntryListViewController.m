@@ -41,12 +41,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
+    
     return self.fetchedResultsController.sections.count;
+    
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+   
     return [sectionInfo numberOfObjects];
 }
 
@@ -77,6 +81,7 @@
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:@"sectionName" cacheName:nil ];
     _fetchedResultsController.delegate = self;
     
+
     return _fetchedResultsController;
 }
 

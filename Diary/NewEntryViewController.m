@@ -44,13 +44,12 @@
 }
 
 - (IBAction)cancelWasPressed:(id)sender {
-    [self insertDiaryEntry];
     [self dismissSelf];
     
 }
 
 - (IBAction)doneWasPressed:(id)sender {
-    
+    [self insertDiaryEntry];
     [self dismissSelf];
     
 }
